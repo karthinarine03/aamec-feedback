@@ -16,8 +16,8 @@ function App() {
         <Header/>
         <Toaster/>
 
-        <main>
-        <div className='container background'>
+        <main className="background">
+        <div className='container '>
           <div className='row'>
             <Routes>
               <Route path='/'element={<RegisterStudent/>}/>

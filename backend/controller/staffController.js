@@ -30,6 +30,7 @@ export const getSubjectReview = catchAsynError(async (req, res, next) => {
             rating: "$ratings.rating",
             comment: "$ratings.comment",
             faculty: "$ratings.faculty",
+            dept : "$ratings.dept",
             semester: "$semester",       // Add semester here
             student: {
               _id: "$student._id",
@@ -79,12 +80,14 @@ export const allSubjectReview = catchAsynError(async (req, res, next) => {
       $group: {
         _id: "$_id",
         subject: { $first: "$subject" },
-        semester: { $first: "$semester" },       // Also add semester here
+        semester: { $first: "$semester" },
+        department : {$first : "$department"},       // Also add semester here
         ratings: {
           $push: {
             rating: "$ratings.rating",
             comment: "$ratings.comment",
             faculty: "$ratings.faculty",
+            dept : "$ratings.dept",
             semester: "$semester",              // Add semester here too
             student: {
               _id: "$student._id",

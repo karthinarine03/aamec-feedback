@@ -6,6 +6,7 @@ import { Questions } from "./helper/Question";
 import { Rate } from "antd";
 import "antd/dist/reset.css";
 import "../SubmitReview.css";
+import { useGetFacultyDeptMutation } from "../redux/api/courseApi";
 
 const SubmitReview = () => {
   const navigate = useNavigate();
@@ -20,17 +21,31 @@ const SubmitReview = () => {
   const semester = searchParams.get("sem");
   const section = searchParams.get("sec");
   const faculty = searchParams.get("faculty");
+  const atDept = searchParams.get("atDept")
   const id = params.id;
 
-  const [addReview, { error, isLoading, isSuccess }] = useAddSubjectReviewMutation();
+  const [addReview, { data,error, isLoading, isSuccess }] = useAddSubjectReviewMutation();
+  const [getFacultyDept,{data:facultyData,error:facultError,isLoading : facultyLoading}] = useGetFacultyDeptMutation()
 
   useEffect(() => {
     if (isSuccess) {
       toast.success("Successfully submitted");
-      navigate(`/`);
+      navigate(`/subjectList/${id}?sem=${semester}&sec=${section}&atDept=${atDept}`);
     }
   }, [isSuccess, navigate]);
 
+  useEffect(()=>{
+    const value = {
+      faculty
+    }
+
+    getFacultyDept(value)
+  },[faculty])
+
+  console.log(facultError,facultyData,faculty);
+  const departments = facultyData?.departments[0]
+  console.log(departments);
+  
   const score_submit = (e) => {
     e.preventDefault();
     if (score.includes(0)) {
@@ -42,12 +57,15 @@ const SubmitReview = () => {
     const value = {
       id,
       body: {
+        atDept,
         subjects: [
           {
             subject,
             rating: totalRating,
             comment: comments,
-            faculty,semester
+            faculty,
+            dept : departments,
+            semester
           },
         ],
       },
@@ -55,6 +73,9 @@ const SubmitReview = () => {
 
     addReview(value);
   };
+
+  console.log(data,error);
+  
 
   return (
     <div className="container py-5">
@@ -69,7 +90,6 @@ const SubmitReview = () => {
                   tooltips={tips}
                   className="ratingstar"
                   allowClear={false}
-                  allowHalf
                   onChange={(count) => {
                     const updatedScores = [...score];
                     updatedScores[index] = parseFloat(count);

@@ -6,12 +6,14 @@ const Subjects = new mongoose.Schema({
     },semester: {
             type: String  
             },
+    department : {
+        type : String
+    },
     ratings : [
         {
             student : {
                 type : mongoose.Schema.Types.ObjectId,
                 ref : "Student",
-                unique : true
             },
             rating : {
                 type : Number
@@ -21,6 +23,9 @@ const Subjects = new mongoose.Schema({
             },
             faculty:{
                 type:String
+            },
+            dept :{
+                type : String
             },
             semester: {
             type: String  

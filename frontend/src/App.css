@@ -32,7 +32,7 @@ header {
   }
   
   .background{
-      background: url("./images/aamec_background.jpg" ) no-repeat center  ;
+      background: url("./images/image.png") no-repeat center  ;
         background-size: cover;
   }
   footer h5 {

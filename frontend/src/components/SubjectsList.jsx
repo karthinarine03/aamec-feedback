@@ -11,6 +11,7 @@ const SubjectsList = () => {
 
   const semester = searchParams.get("sem");
   const section = searchParams.get("sec");
+  const atDept = searchParams.get("atDept")
   const id = params.id;
 
   const { data: studentData, isLoading: studentLoading } = useGetStudentsQuery(id);
@@ -22,7 +23,10 @@ const SubjectsList = () => {
     if (semester && section) {
       getSubjects({ semester, section });
     }
-  }, [semester, section, getSubjects]);
+    
+  }, [semester, section]);
+
+
 
   const selectedSubjectTitles = studentData?.data?.subjects?.map((s) => s?.subject) || [];
   const allSubjects = subjectData?.filtered?.[0]?.subjects || [];
@@ -50,7 +54,7 @@ const SubjectsList = () => {
       const encodedSec = encodeURIComponent(section);
 
       navigate(
-        `/submitReview/${id}?sub=${title}&sem=${encodedSem}&sec=${encodedSec}&faculty=${faculty}`,
+        `/submitReview/${id}?sub=${title}&sem=${encodedSem}&sec=${encodedSec}&atDept=${atDept}&faculty=${faculty}`,
         { replace: true }
       );
     }

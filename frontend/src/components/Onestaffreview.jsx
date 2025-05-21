@@ -3,12 +3,20 @@ import { DownloadTableExcel } from 'react-export-table-to-excel';
 import { useGetAllSubjectsReviewQuery } from '../redux/api/staffApi';
 
 const Onestaffreview = () => {
-  const tableRef = useRef(null)
+  const tableRef = useRef(null);
   const { data, error, isLoading } = useGetAllSubjectsReviewQuery();
   const [selectedSemester, setSelectedSemester] = useState('');
+  const [selectedDept,setSelectedDept] = useState('')
+console.log(data);
 
+  let numberReviewed
   const handleSemesterChange = (e) => {
+    e.preventDefault()
     setSelectedSemester(e.target.value);
+  };
+  const handleDeptChange = (e) => {
+    e.preventDefault()
+    setSelectedDept(e.target.value);
   };
 
   if (isLoading) return <p className="text-center my-4">Loading subject reviews...</p>;
@@ -17,28 +25,35 @@ const Onestaffreview = () => {
 
   const filteredSubjects = data.data.map(subject => {
     const sectionMap = {};
-
-    subject.ratings.forEach(rating => {
-      if (rating.semester === selectedSemester) {
-        const section = rating.student?.section || 'Unknown';
-        if (!sectionMap[section]) sectionMap[section] = {};
-
-        if (!sectionMap[section][rating.faculty]) {
-          sectionMap[section][rating.faculty] = {
-            faculty: rating.faculty,
-            ratings: [],
-          };
+  
+   
+    if(subject.department == selectedDept){
+      subject.ratings.forEach(rating => {
+        if (rating.semester === selectedSemester) {
+          const section = rating.student?.section || 'Unknown';
+          if (!sectionMap[section]) sectionMap[section] = {};
+  
+          if (!sectionMap[section][rating.faculty]) {
+            sectionMap[section][rating.faculty] = {
+              faculty: rating.faculty,
+              ratings: [],
+              dept: rating.dept || 'Unknown', // ✅ Store dept here
+            };
+          }
+  
+          sectionMap[section][rating.faculty].ratings.push(rating);
         }
+      });
+    }
 
-        sectionMap[section][rating.faculty].ratings.push(rating);
-      }
-    });
-
+    // Convert the sectionMap into sectionRatings
     const sectionRatings = Object.entries(sectionMap).map(([section, facultyMap]) => {
       const facultyRatings = Object.values(facultyMap).map(fac => {
         const avg = fac.ratings.reduce((sum, r) => sum + r.rating, 0) / fac.ratings.length;
         const avgRating = parseFloat(avg.toFixed(1));
-        const avgPercentage = Math.round((avgRating / 5) * 10); // percentage from rating out of 5
+        const avgPercentage = Math.round((avgRating / 5) * 10);
+         numberReviewed = subject?.ratings?.length
+   console.log(numberReviewed); // percentage from rating out of 5
         return {
           ...fac,
           avgRating,
@@ -60,22 +75,53 @@ const Onestaffreview = () => {
 
   const renderTableBySection = (sectionName) => (
     <div className="table-responsive shadow rounded mb-5">
-
       <DownloadTableExcel
           filename="staff table"
           sheet="staff"
           currentTableRef={tableRef.current}
       >
-
-          <button> Export excel </button>
-
+          <button>Export Excel</button>
       </DownloadTableExcel>
-      <h4 className="text-center bg-light py-3 fw-bold rounded-top" >Section {sectionName}</h4>
-      <table ref={tableRef} className="table table-bordered table-hover align-middle mb-0" >
+      <h4 className="text-center bg-light py-3 fw-bold rounded-top">Section {sectionName}</h4>
+      <table  className="table table-bordered table-hover align-middle mb-0">
         <thead className="table-dark text-center">
           <tr>
             <th className="text-start px-4">Subject</th>
             <th className="text-start px-4">Faculty</th>
+            <th className="text-start px-4">Subject Handling Department</th>
+            <th className="text-center">Average Rating</th>
+            <th className="text-center">No.of.Reviewed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredSubjects.map(subject => {
+            const sectionData = subject.sectionRatings.find(sec => sec.section === sectionName);
+            if (!sectionData) return null;
+            {console.log(sectionData.facultyRatings);
+            }
+            return sectionData.facultyRatings.map((fac, index) => (
+              <tr key={`${subject._id}-${sectionName}-${fac.faculty}-${index}`}>
+                <td className="text-start px-4">{subject.subject}</td>
+                <td className="text-start px-4">{fac.faculty}</td>
+                <td className="text-start px-4">{fac.dept}</td> {/* ✅ Display dept */}
+                <td className="text-center">
+                  <span className="badge bg-success fs-6 me-2">{fac.avgPercentage}%</span>
+                  <i className="bi bi-star-fill me-1 text-warning"></i>
+                  <small>{fac.avgRating}</small>
+                </td>
+                <td className="text-start px-4">{fac.ratings.length}</td>
+              </tr>
+            ));
+          })}
+        </tbody>
+      </table>
+
+      <table ref={tableRef} style={{display : 'none'}} className="table table-bordered table-hover align-middle mb-0">
+        <thead className="table-dark text-center">
+          <tr>
+            <th className="text-start px-4">Subject</th>
+            <th className="text-start px-4">Faculty</th>
+            <th className="text-start px-4">Subject Handling Department</th>
             <th className="text-center">Average Rating</th>
           </tr>
         </thead>
@@ -88,10 +134,9 @@ const Onestaffreview = () => {
               <tr key={`${subject._id}-${sectionName}-${fac.faculty}-${index}`}>
                 <td className="text-start px-4">{subject.subject}</td>
                 <td className="text-start px-4">{fac.faculty}</td>
+                <td className="text-start px-4">{fac.dept}</td> {/* ✅ Display dept */}
                 <td className="text-center">
                   <span className="badge bg-success fs-6 me-2">{fac.avgPercentage}%</span>
-                  <i className="bi bi-star-fill me-1 text-warning"></i>
-                  <small>{fac.avgRating}</small>
                 </td>
               </tr>
             ));
@@ -110,6 +155,7 @@ const Onestaffreview = () => {
         faculty: fac.faculty,
         avgRating: fac.avgRating,
         avgPercentage: fac.avgPercentage,
+        dept: fac.dept, // ✅ Include dept in mobile card
       }));
     });
 
@@ -123,6 +169,7 @@ const Onestaffreview = () => {
             <div key={index} className="mb-3">
               <p className="mb-1">Subject: <strong>{item.subject}</strong></p>
               <p className="mb-1">Faculty: {item.faculty}</p>
+              <p className="mb-1">Department: {item.dept}</p> {/* ✅ Add dept to mobile card */}
               <p className="mb-0">
                 <span className="badge bg-success">{item.avgPercentage}%</span>{' '}
                 <i className="bi bi-star-fill me-1 text-warning"></i>
@@ -141,6 +188,20 @@ const Onestaffreview = () => {
       <h2 className="mb-4 text-primary text-center fw-bold">
         Subject Reviews {selectedSemester && `- Semester ${selectedSemester}`}
       </h2>
+
+      <div className="mb-4 text-center">
+        <label className="me-2 fw-semibold">Filter by Departement:</label>
+        <select
+          className="form-select d-inline w-auto"
+          value={selectedDept}
+          onChange={handleDeptChange}
+        >
+          <option value="">-- Select Department --</option>
+          {["IT","CSE","ECE","EEE","MECH","CHEMICAL","CIVIL"].map((sem) => (
+            <option key={sem} value={sem}>{`Semester ${sem}`}</option>
+          ))}
+        </select>
+      </div>
 
       <div className="mb-4 text-center">
         <label className="me-2 fw-semibold">Filter by Semester:</label>

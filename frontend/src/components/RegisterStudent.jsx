@@ -17,7 +17,7 @@ const RegisterStudent = () => {
 
     useEffect(()=>{
       if(isSuccess && data?.data[0]?._id){
-        navigate(`/subjectList/${data?.data[0]?._id}?sem=${semester}&sec=${section}`)
+        navigate(`/subjectList/${data?.data[0]?._id}?sem=${semester}&sec=${section}&atDept=${department}`)
       }
     },[isSuccess,data?.data[0]?._id])
 
