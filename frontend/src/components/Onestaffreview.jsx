@@ -74,7 +74,7 @@ const Onestaffreview = () => {
 
   const renderTableBySection = (sectionName) => (
     <div className="table-responsive shadow rounded mb-5">
-        <div className='d-flex justify-content-end mt-3 mx-3'>
+        <div className='d-flex justify-content-end mb-3 mx-3'>
           <DownloadTableExcel
             filename="staff table"
             sheet="staff"
@@ -207,7 +207,7 @@ const Onestaffreview = () => {
         >
           <option value="">-- Select Department --</option>
           {["IT","CSE","ECE","EEE","MECH","CHEMICAL","CIVIL"].map((sem) => (
-            <option key={sem} value={sem}>{`Semester ${sem}`}</option>
+            <option key={sem} value={sem}>{`${sem}`}</option>
           ))}
         </select>
       </div>
