@@ -76,13 +76,13 @@ const Onestaffreview = () => {
   const renderTableBySection = (sectionName) => (
     <div className="table-responsive shadow rounded mb-5">
         <div className='d-flex justify-content-end mb-3 mx-3'>
-          <DownloadTableExcel
+         {!selectedSemester==0?<DownloadTableExcel
             filename="staff table"
             sheet="staff"
             currentTableRef={tableRef.current}
           >
-            <button className='btn btn-primary'>Export Excel</button>
-        </DownloadTableExcel>
+            <button className='btn btn-primary'   >Export Excel</button>
+        </DownloadTableExcel>:null} 
         </div>
       <h4 className="text-center bg-light py-3 fw-bold rounded-top">Section {sectionName}</h4>
       <table  className="table table-bordered table-hover align-middle mb-0">
@@ -165,13 +165,13 @@ const Onestaffreview = () => {
     return (
       <div className="card mb-4 shadow-sm">
         <div className='d-flex justify-content-end mt-3 mx-3'>
-        <DownloadTableExcel
-          filename="staff table"
-          sheet="staff"
-          currentTableRef={tableRef.current}
-      >
-          <button className='btn btn-primary'>Export Excel</button>
-      </DownloadTableExcel>
+       {!selectedSemester?<DownloadTableExcel
+            filename="staff table"
+            sheet="staff"
+            currentTableRef={tableRef.current}
+          >
+            <button className='btn btn-primary'   >Export Excel</button>
+        </DownloadTableExcel>:""} 
         </div>
         <div className="card-body">
           <h5 className="card-title fw-bold text-primary text-center">Section {sectionName}</h5>
