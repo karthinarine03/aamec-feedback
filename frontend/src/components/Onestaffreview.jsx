@@ -7,7 +7,7 @@ const Onestaffreview = () => {
   const { data, error, isLoading } = useGetAllSubjectsReviewQuery();
   const [selectedSemester, setSelectedSemester] = useState('');
   const [selectedDept,setSelectedDept] = useState('')
-console.log(data);
+
 
   let numberReviewed
   const handleSemesterChange = (e) => {
@@ -98,8 +98,7 @@ console.log(data);
           {filteredSubjects.map(subject => {
             const sectionData = subject.sectionRatings.find(sec => sec.section === sectionName);
             if (!sectionData) return null;
-            {console.log(sectionData.facultyRatings);
-            }
+
             return sectionData.facultyRatings.map((fac, index) => (
               <tr key={`${subject._id}-${sectionName}-${fac.faculty}-${index}`}>
                 <td className="text-start px-4">{subject.subject}</td>

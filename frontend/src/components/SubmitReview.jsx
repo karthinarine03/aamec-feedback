@@ -42,9 +42,8 @@ const SubmitReview = () => {
     getFacultyDept(value)
   },[faculty])
 
-  console.log(facultError,facultyData,faculty);
   const departments = facultyData?.departments[0]
-  console.log(departments);
+
   
   const score_submit = (e) => {
     e.preventDefault();
@@ -74,7 +73,6 @@ const SubmitReview = () => {
     addReview(value);
   };
 
-  console.log(data,error);
   
 
   return (

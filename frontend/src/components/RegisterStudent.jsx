@@ -60,9 +60,6 @@ const RegisterStudent = () => {
 
   // }
 
-  console.log(data);
-
-
 
   return (
 <div className="container my-5">

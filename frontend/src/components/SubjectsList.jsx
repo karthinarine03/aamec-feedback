@@ -43,7 +43,6 @@ const SubjectsList = () => {
   const handleCardClick = (subject) => {
     const subjectTitle = subject.subjectTitle;
     const alreadyReviewed = selectedSubjectTitles.includes(subjectTitle);
-    console.log("Clicked subject:", subjectTitle, "Already reviewed:", alreadyReviewed);
 
     if (alreadyReviewed) {
       handleAlreadyReviewedClick(subjectTitle);
