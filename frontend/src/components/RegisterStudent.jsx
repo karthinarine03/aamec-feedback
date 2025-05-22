@@ -132,22 +132,22 @@ const RegisterStudent = () => {
                 <label htmlFor="sem" className="form-label">Semester</label>
                 <select className="form-select" id="sem" value={semester} onChange={(e) => setSemester(e.target.value)}>
                   <option hidden>--</option>
-                  <div className={year == 1 ? "":"d-none"}>
-                  <option value="1">I</option>
-                  <option value="2">II</option>
-                  </div>
-                  <div className={year == 2 ? "":"d-none"}>
-                  <option value="3">III</option>
-                  <option value="4">IV</option>
-                  </div>
-                  <div className={year == 3 ? "":"d-none"}>
-                  <option value="5">V</option>
-                  <option value="6">VI</option>
-                  </div>
-                  <div className={year == 4 ? "":"d-none"}> 
-                  <option value="7">VII</option>
-                  <option value="8">VIII</option>
-                  </div>
+                  
+                  <option value="1" className={year == 1 ? "":"d-none"}>I</option>
+                  <option value="2" className={year == 1 ? "":"d-none"}>II</option>
+                  
+                  
+                  <option value="3" className={year == 2 ? "":"d-none"}>III</option>
+                  <option value="4" className={year == 2 ? "":"d-none"}>IV</option>
+                  
+                  
+                  <option value="5" className={year == 3 ? "":"d-none"}>V</option>
+                  <option value="6" className={year == 3 ? "":"d-none"}>VI</option>
+                  
+                  
+                  <option value="7" className={year == 4 ? "":"d-none"}>VII</option>
+                  <option value="8" className={year == 4 ? "":"d-none"}>VIII</option>
+                  
                 </select>
               </div>
 

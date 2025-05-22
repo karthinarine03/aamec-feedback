@@ -77,7 +77,7 @@ const SubmitReview = () => {
 
   return (
     <div className="container py-5">
-      <h1 className="text-center mb-5 text-gradient">Feedback: {subject}</h1>
+      <h1 className="text-center mb-5 text-white">Feedback: {subject}</h1>
       <form onSubmit={score_submit}>
         <div className="row g-4">
           {Questions.map((question, index) => (
@@ -100,7 +100,7 @@ const SubmitReview = () => {
         </div>
 
         <div className="mt-5">
-          <h4 className="mb-3">Additional Comments</h4>
+          <h4 className="mb-3 text-white">Additional Comments</h4>
           <textarea
             className="form-control shadow-sm"
             rows="4"

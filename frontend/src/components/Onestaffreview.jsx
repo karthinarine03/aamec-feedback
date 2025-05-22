@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { DownloadTableExcel } from 'react-export-table-to-excel';
 import { useGetAllSubjectsReviewQuery } from '../redux/api/staffApi';
 
+
 const Onestaffreview = () => {
   const tableRef = useRef(null);
   const { data, error, isLoading } = useGetAllSubjectsReviewQuery();
@@ -194,12 +195,12 @@ const Onestaffreview = () => {
 
   return (
     <div className="container py-4">
-      <h2 className="mb-4 text-primary text-center fw-bold">
+      <h2 className="check mb-4 text-primary text-center fw-semibold text-white">
         Subject Reviews {selectedSemester && `- Semester ${selectedSemester}`}
       </h2>
 
       <div className="mb-4 text-center">
-        <label className="me-2 fw-semibold">Filter by Departement:</label>
+        <label className="check me-2 fw-semibold text-white" >Filter by Departement:</label>
         <select
           className="form-select d-inline w-auto"
           value={selectedDept}
@@ -213,7 +214,7 @@ const Onestaffreview = () => {
       </div>
 
       <div className="mb-4 text-center">
-        <label className="me-2 fw-semibold">Filter by Semester:</label>
+        <label className="check me-2 fw-semibold text-white" >Filter by Semester:</label>
         <select
           className="form-select d-inline w-auto"
           value={selectedSemester}

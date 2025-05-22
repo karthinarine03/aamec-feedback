@@ -61,7 +61,7 @@ const SubjectsList = () => {
 
   return (
     <div className="container py-5">
-      <h1 className="text-center text-gradient mb-5">Subjects</h1>
+      <h1 className="text-center text-white mb-5 fw-bold">SUBJECTS</h1>
 
       <div className="row g-4">
         {studentLoading || subjectLoading ? (

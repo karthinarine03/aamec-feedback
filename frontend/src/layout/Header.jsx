@@ -28,8 +28,9 @@ function Header() {
           </div>
 
           {/* Right Logo (visible only on md+) */}
-          <div className="col-md-2 d-none d-md-flex justify-content-md-end">
+          <div className="col-md-2 d-none d-md-flex align-items-center justify-content-md-end gap-4">
             <img src={naac} alt="NAAC Logo" width="80" className="img-fluid" />
+             <img src={nba} alt="NBA Logo" width="60" className="img-fluid" />
           </div>
 
           {/* Bottom Logos for small screens only */}
