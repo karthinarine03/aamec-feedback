@@ -165,13 +165,13 @@ const Onestaffreview = () => {
     return (
       <div className="card mb-4 shadow-sm">
         <div className='d-flex justify-content-end mt-3 mx-3'>
-       {!selectedSemester?<DownloadTableExcel
+               {!selectedSemester==0?<DownloadTableExcel
             filename="staff table"
             sheet="staff"
             currentTableRef={tableRef.current}
           >
             <button className='btn btn-primary'   >Export Excel</button>
-        </DownloadTableExcel>:""} 
+        </DownloadTableExcel>:null} 
         </div>
         <div className="card-body">
           <h5 className="card-title fw-bold text-primary text-center">Section {sectionName}</h5>
