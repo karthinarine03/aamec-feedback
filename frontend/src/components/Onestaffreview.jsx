@@ -52,8 +52,7 @@ console.log(data);
         const avg = fac.ratings.reduce((sum, r) => sum + r.rating, 0) / fac.ratings.length;
         const avgRating = parseFloat(avg.toFixed(1));
         const avgPercentage = Math.round((avgRating / 5) * 10);
-         numberReviewed = subject?.ratings?.length
-   console.log(numberReviewed); // percentage from rating out of 5
+         numberReviewed = subject?.ratings?.length // percentage from rating out of 5
         return {
           ...fac,
           avgRating,
@@ -75,13 +74,15 @@ console.log(data);
 
   const renderTableBySection = (sectionName) => (
     <div className="table-responsive shadow rounded mb-5">
-      <DownloadTableExcel
-          filename="staff table"
-          sheet="staff"
-          currentTableRef={tableRef.current}
-      >
-          <button>Export Excel</button>
-      </DownloadTableExcel>
+        <div className='d-flex justify-content-end mt-3 mx-3'>
+          <DownloadTableExcel
+            filename="staff table"
+            sheet="staff"
+            currentTableRef={tableRef.current}
+          >
+            <button className='btn btn-primary'>Export Excel</button>
+        </DownloadTableExcel>
+        </div>
       <h4 className="text-center bg-light py-3 fw-bold rounded-top">Section {sectionName}</h4>
       <table  className="table table-bordered table-hover align-middle mb-0">
         <thead className="table-dark text-center">
@@ -163,6 +164,15 @@ console.log(data);
 
     return (
       <div className="card mb-4 shadow-sm">
+        <div className='d-flex justify-content-end mt-3 mx-3'>
+        <DownloadTableExcel
+          filename="staff table"
+          sheet="staff"
+          currentTableRef={tableRef.current}
+      >
+          <button className='btn btn-primary'>Export Excel</button>
+      </DownloadTableExcel>
+        </div>
         <div className="card-body">
           <h5 className="card-title fw-bold text-primary text-center">Section {sectionName}</h5>
           {sectionData.map((item, index) => (

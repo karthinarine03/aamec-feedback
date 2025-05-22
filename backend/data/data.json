@@ -187,7 +187,7 @@
           {
             "subjectCode": "CS3491L",
             "subjectTitle": "Artificial Intelligence and Machine Learning Lab",
-            "faculty": "Mrs. S. Sudha",
+            "faculty": "Mrs. S. Sudha(I/C), Mrs. V. Sivasakthi(C/S)",
             "department" : "Information Technology"
           },
           {
@@ -197,39 +197,39 @@
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3493",
+            "subjectCode": "CS3492",
             "subjectTitle": "Database Management Systems",
             "faculty": "Mrs. J. SathiyaJothi",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3493L",
+            "subjectCode": "CS3481L",
             "subjectTitle": "Database Management Systems Lab",
-            "faculty": "Mrs. J. SathiyaJothi",
+            "faculty": "Mrs. J. SathiyaJothi(I/C), Dr.R.Rebekha(C/S)",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3494",
+            "subjectCode": "IT3401",
             "subjectTitle": "Web Essentials",
             "faculty": "Mrs. V. Sivasakthi",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3494L",
+            "subjectCode": "IT3401L",
             "subjectTitle": "Web Essentials Lab",
-            "faculty": "Mrs. V. Sivasakthi",
+            "faculty": "Mrs. V. Sivasakthi(I/C),Mrs. S. Sudha(C/S)",
             "department" : "Information Technology"
           },
            {
             "subjectCode": "CS3451",
-            "subjectTitle": "introduction of Operating Systems",
+            "subjectTitle": "Introduction of Operating Systems",
             "faculty": "Dr.R.Rebekha",
             "department" : "Information Technology"
           },
            {
             "subjectCode": "CS3461",
-            "subjectTitle": "Operating Systems ",
-            "faculty": "Dr.R.Rebekha",
+            "subjectTitle": "Operating Systems Lab ",
+            "faculty": "Mrs.M.C Jayaprasanna(I/C),Dr.R.Rebekha(C/S)",
             "department" : "Information Technology"
           },
           {
@@ -240,7 +240,7 @@
           },
           {
             "subjectCode": "Naan Mudhalvan",
-            "subjectTitle": "Web Essentials",
+            "subjectTitle": "Naan Mudhalvan EBPL",
             "faculty": "Mr.R.Rama Rajesh",
             "department" : "Information Technology"
           }
@@ -257,55 +257,61 @@
           {
             "subjectCode": "CS3491L",
             "subjectTitle": "Artificial Intelligence and Machine Learning Lab",
-            "faculty": "Mrs. S. Sudha",
+            "faculty": "Mrs. S. Sudha(I/C),Mrs. V. Sivasakthi(C/S)",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3492",
+            "subjectCode": "CS3452",
             "subjectTitle": "Theory of Computation",
             "faculty": "Mrs. R. Priya",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3493",
+            "subjectCode": "CS3492",
             "subjectTitle": "Database Management Systems",
             "faculty": "Mrs. J. SathiyaJothi",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3493L",
+            "subjectCode": "CS3481L",
             "subjectTitle": "Database Management Systems Lab",
-            "faculty": "Mrs. J. SathiyaJothi",
+            "faculty": "Mrs. J. SathiyaJothi(I/C),Mrs. A. Jancy(C/S)",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3494",
+            "subjectCode": "IT3401",
             "subjectTitle": "Web Essentials",
             "faculty": "Mrs. V. Sivasakthi",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "CS3494L",
+            "subjectCode": "IT3401L",
             "subjectTitle": "Web Essentials Lab",
-            "faculty": "Mrs. V. Sivasakthi",
+            "faculty": "Mrs. V. Sivasakthi(I/C),Mrs. S. Sudha(C/S)",
             "department" : "Information Technology"
           },
-          {
+           {
             "subjectCode": "CS3451",
-            "subjectTitle": "Operating Systems",
-            "faculty": "Dr. M.C. Jayaprasanna",
+            "subjectTitle": "Introduction of Operating Systems",
+            "faculty": "Mrs.M.C Jayaprasanna",
+            "department" : "Information Technology"
+          },
+           {
+            "subjectCode": "CS3461",
+            "subjectTitle": "Operating Systems Lab ",
+            "faculty": "Mrs.M.C Jayaprasanna(I/C),Dr.R.Rebekha(C/S)",
             "department" : "Information Technology"
           },
           {
-            "subjectCode": "EN3451",
+            "subjectCode": "GE3451",
             "subjectTitle": "Environmental Sciences and Sustainability",
             "faculty": "Dr. D. Deepa",
-            "department" :"Chemistry"
+            "department" : "Chemistry"
           },
           {
             "subjectCode": "Naan Mudhalvan",
-            "subjectTitle": "Web Essentials",
-            "faculty": "Mrs. J. SathiyaJothi",
+            "subjectTitle": "Naan Mudhalvan EBPL",
+            "faculty": "Mrs. S. Ponnarasi",
             "department" : "Information Technology"
           }
         ]
