@@ -2,7 +2,7 @@ import { createApi,fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const studentApi = createApi({
     reducerPath : "studentApi",
-    baseQuery : fetchBaseQuery({baseUrl:"https://aamecfeedback-6m9o.onrender.com/api/v1"}),
+    baseQuery : fetchBaseQuery({baseUrl:"http://192.168.2.51:3000/api/v1"}),
     keepUnusedDataFor: 60,
     tagTypes : ["Review"],
     endpoints : (builder)=>({
