@@ -2,7 +2,7 @@ import { createApi,fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const courseApi = createApi({
     reducerPath : "courseApi",
-    baseQuery : fetchBaseQuery({baseUrl:"https://aec2-202-21-40-242.ngrok-free.app/api/v1"}),
+    baseQuery : fetchBaseQuery({baseUrl:" http://192.168.189.134:3000/api/v1"}),
     keepUnusedDataFor: 60,
     endpoints : (builder)=>({
         getSubjects : builder.mutation({
@@ -10,7 +10,10 @@ export const courseApi = createApi({
                 return {
                     url :"/subjects",
                     method : "POST",
-                    body
+                    body,
+                    headers: {
+                        "Content-Type": "application/json",
+                      }
                 }
             }
         }),
@@ -19,7 +22,10 @@ export const courseApi = createApi({
                 return {
                     url :"/getStaffDept",
                     method : "POST",
-                    body
+                    body,
+                    headers: {
+                        "Content-Type": "application/json",
+                      }
                 }
             }
         }),
