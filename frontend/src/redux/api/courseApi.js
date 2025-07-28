@@ -2,7 +2,7 @@ import { createApi,fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const courseApi = createApi({
     reducerPath : "courseApi",
-    baseQuery : fetchBaseQuery({baseUrl:" http://192.168.189.134:3000/api/v1"}),
+    baseQuery : fetchBaseQuery({baseUrl:` http://${window.location.hostname}:3000/api/v1`}),
     keepUnusedDataFor: 60,
     endpoints : (builder)=>({
         getSubjects : builder.mutation({
@@ -29,7 +29,14 @@ export const courseApi = createApi({
                 }
             }
         }),
+        admin: builder.query({
+            query: (body) => ({
+            url: '/admin',
+              method: 'GET',
+              body
+            })
+          })
     })
 })
 
-export const {useGetSubjectsMutation,useGetFacultyDeptMutation} = courseApi
+export const {useGetSubjectsMutation,useGetFacultyDeptMutation,useAdminQuery} = courseApi

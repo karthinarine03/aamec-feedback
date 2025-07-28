@@ -1,4 +1,7 @@
 import "./App.css"
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import RegisterStudent from './components/RegisterStudent'
 import SubmitReview from './components/SubmitReview'
@@ -8,6 +11,7 @@ import SubjectsList from './components/SubjectsList'
 import Onestaffreview from './components/Onestaffreview'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
+import AdminSubjectEditor from "./components/AdminSubjectEditor"
 function App() {
 
   return(
@@ -25,6 +29,7 @@ function App() {
               <Route path='/subjectList/:id'element={<SubjectsList/>}/>
         
               <Route path="/onestaff-reviews" element={<Onestaffreview />} />
+              <Route path="/admin" element={<AdminSubjectEditor />} />
             </Routes>
           </div>
         </div>

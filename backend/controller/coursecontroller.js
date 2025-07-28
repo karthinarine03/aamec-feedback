@@ -50,3 +50,16 @@ export const staffDept = catchAsynError(async (req, res, next) => {
     departments
   });
 });
+
+// add upon admin controll
+
+export const admin = catchAsynError(async(req,res,next)=>{
+
+  const {dept,semester} = req.body;
+  
+  const result =await data.filter(item => item.department == dept && item.semester == semester)
+  
+  res.status(200).json({
+    result
+  })
+})
