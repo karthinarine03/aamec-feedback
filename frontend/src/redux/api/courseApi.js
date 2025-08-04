@@ -29,14 +29,14 @@ export const courseApi = createApi({
                 }
             }
         }),
-        admin: builder.query({
+        admin: builder.mutation({
             query: (body) => ({
             url: '/admin',
-              method: 'GET',
+              method: 'POST',
               body
             })
           })
     })
 })
 
-export const {useGetSubjectsMutation,useGetFacultyDeptMutation,useAdminQuery} = courseApi
+export const {useGetSubjectsMutation,useGetFacultyDeptMutation,useAdminMutation} = courseApi

@@ -5,6 +5,6 @@ const router=express.Router();
 
 router.route('/subjects').post(coursecontroller);
 router.route('/getStaffDept').post(staffDept);
-router.route('/admin').get(admin);
+router.route('/admin').post(admin);
 
 export default router;
