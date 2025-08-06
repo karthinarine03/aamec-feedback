@@ -203,9 +203,9 @@ export const updateSubjectById = catchAsynError(async (req, res, next) => {
   let updated = false;
 
   for (let dept of parsed) {
-    if (dept.department === department && dept.semester == semester) {
+    if (dept.department == department && dept.semester == semester) {
       for (let sec of dept.sections) {
-        if (sec.section === section) {
+        if (sec.section == section) {
           const subject = sec.subjects.find(subj => subj.id == id);
           if (subject) {
             subject.subjectTitle = subjectTitle;
