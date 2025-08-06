@@ -6,6 +6,8 @@ import { faPenToSquare } from "@fortawesome/free-regular-svg-icons";
 const AdminSubjectEditor = () => {
   const [dept, setDept] = useState();
   const [semester, setSemester] = useState();
+
+  const [edit,setEdit] = useState(false)
   const body = {
     dept,
     semester,
@@ -23,6 +25,11 @@ const AdminSubjectEditor = () => {
   data?.result[0]?.sections?.map((sect) => {
     sect?.subjects?.map((sub) => console.log(sub.faculty));
   });
+
+  const handleDelete =(id)=>{
+    console.log(id);
+
+  }
   return (
     <div>
       <div className="container">
@@ -73,15 +80,15 @@ const AdminSubjectEditor = () => {
                   {sect?.subjects?.map((sub, index) => (
                     <div className="bg-light d-flex justify-content-center gap-3">
                       <div className="">
-                        <input value={sub.subjectTitle} className=""/>
-                        <FontAwesomeIcon icon={faPenToSquare}/>
-
+                        <input value={sub.subjectCode} />
+                        <input value={sub.subjectTitle} className=""  />
                       </div>
                       <div>
-                        <input value={sub.faculty} readOnly  className="full-width"/>
-                        <FontAwesomeIcon icon={faPenToSquare}/>
+                        <input value={sub.faculty}   className="full-width"/>
+                        <FontAwesomeIcon icon={faPenToSquare} />
 
                       </div>
+                      <button onChange={handleDelete(sub.id)}>delete</button>
                     </div>
                   ))}
                 </div>

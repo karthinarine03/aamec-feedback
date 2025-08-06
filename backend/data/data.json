@@ -7,78 +7,91 @@
         "section": "A",
         "subjects": [
           {
+            "id": 1,
             "subjectCode": "CCS356",
             "subjectTitle": "Object Oriented Software Engineering",
             "faculty": "Mrs.G.Jeyasri",
             "department": "Information Technology"
           },
           {
+            "id": 2,
             "subjectCode": "CCS335",
             "subjectTitle": "Cloud Computing",
             "faculty": "Dr.K.Mohan",
             "department": "Information Technology"
           },
           {
+            "id": 3,
             "subjectCode": "CCS335L",
             "subjectTitle": "Cloud Computing Lab(HITECH LAB)",
             "faculty": "Mr.R.Rama Rajesh(I/C),Mr. B. Venkatesh (C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 4,
             "subjectCode": "CCS354",
             "subjectTitle": "Network Security",
             "faculty": "Mr. B. Venkatesh",
             "department": "Information Technology"
           },
           {
+            "id": 5,
             "subjectCode": "CCS364",
             "subjectTitle": "Soft Computing",
             "faculty": "Dr. V. Kalaivazhi",
             "department": "Information Technology"
           },
           {
+            "id": 6,
             "subjectCode": "MX3085",
             "subjectTitle": "Well Being with Traditional Practices",
             "faculty": "Mr. Mohamed Haris",
             "department": "Information Technology"
           },
           {
+            "id": 7,
             "subjectCode": "IT3681",
             "subjectTitle": "Mobile Applications Development Lab (Hi-Tech Lab)",
             "faculty": "Dr.R.Rebekha",
             "department": "Information Technology"
           },
           {
+            "id": 8,
             "subjectCode": "CS356L",
             "subjectTitle": "Object Oriented Software Engineering Lab (Info Tech)",
             "faculty": "Mrs.G.Jeyasri(I/C), Mrs. Ponmarasi (C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 9,
             "subjectCode": "CS354L",
             "subjectTitle": "Network Security Lab (Info Tech Lab)",
             "faculty": "Mr. B. Venkatesh (C), Dr. V. Kalaivazhi (S)",
             "department": "Information Technology"
           },
           {
+            "id": 10,
             "subjectCode": "CCS364L",
             "subjectTitle": "Soft Computing  Lab (Project Lab)",
             "faculty": "Dr. V. Kalaivazhi, Mrs.Sathiya Jothi(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 11,
             "subjectCode": "CCW331L",
             "subjectTitle": "Business Analytics Lab (Project Lab)",
             "faculty": "Mrs. S. Ponnarasi(I/C),Mrs.G.Jeyasri(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 12,
             "subjectCode": "CCW331",
             "subjectTitle": "Business Analytics",
             "faculty": "Mrs. S. Ponnarasi",
             "department": "Information Technology"
           },
           {
+            "id": 13,
             "subjectCode": "NAAN MUDHALVAN",
             "subjectTitle": "Speech Recognition Techniques",
             "faculty": "Mrs. M.C. Jayaprasanna, Dr. K. Mohan",
@@ -90,81 +103,101 @@
         "section": "B",
         "subjects": [
           {
+            "id": 1,
             "subjectCode": "CCS356",
             "subjectTitle": "Object Oriented Software Engineering",
             "faculty": "Mrs.G.Jeyasri",
             "department": "Information Technology"
           },
           {
+            "id": 2,
             "subjectCode": "CCS335",
             "subjectTitle": "Cloud Computing",
             "faculty": "Mr.R.Rama Rajesh",
             "department": "Information Technology"
           },
           {
+            "id": 3,
             "subjectCode": "CCS335L",
             "subjectTitle": "Cloud Computing Lab(HITECH LAB)",
             "faculty": "Mr.R.Rama Rajesh(I/C),Mr. B. Venkatesh (C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 4,
             "subjectCode": "CCS354",
             "subjectTitle": "Network Security",
             "faculty": "Mr. B. Venkatesh",
             "department": "Information Technology"
           },
           {
+            "id": 5,
             "subjectCode": "CCS364",
             "subjectTitle": "Soft Computing",
             "faculty": "Dr. V. Kalaivazhi",
             "department": "Information Technology"
           },
           {
+            "id": 6,
             "subjectCode": "MX3085",
             "subjectTitle": "Well Being with Traditional Practices",
             "faculty": "Mrs.N.Mohamed Haris",
             "department": "Information Technology"
           },
           {
+            "id": 7,
             "subjectCode": "IT3681",
             "subjectTitle": "Mobile Applications Development Lab (Hi-Tech Lab)",
             "faculty": "Dr.R.Rebekha,Mrs.R.Priya(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 8,
             "subjectCode": "CS356L",
             "subjectTitle": "Object Oriented Software Engineering Lab (Info Tech)",
             "faculty": "Mrs.G.Jeyasri(I/C),Mrs.R.Priya(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 9,
             "subjectCode": "CS354L",
             "subjectTitle": "Network Security Lab (Info Tech Lab)",
             "faculty": "Mr. B. Venkatesh (C),Mr.R.Rama Rajesh(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 10,
             "subjectCode": "CCS364L",
             "subjectTitle": "Soft Computing  Lab (Project Lab)",
             "faculty": "Dr. V. Kalaivazhi,Mrs. S. Ponnarasi(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 11,
             "subjectCode": "CCW331L",
             "subjectTitle": "Business Analytics Lab (Project Lab)",
             "faculty": "Mrs.N.Mohamed Haris(I/C),Mrs.G.Jeyasri(C/S)",
             "department": "Information Technology"
           },
           {
+            "id": 12,
             "subjectCode": "CCW331",
             "subjectTitle": "Business Analytics",
             "faculty": "Mrs.N.Mohamed Haris",
             "department": "Information Technology"
           },
           {
+            "id": 13,
             "subjectCode": "NAAN MUDHALVAN",
             "subjectTitle": "Speech Recognition Techniques",
             "faculty": "Mrs.N.Mohamed Haris",
+            "department": "Information Technology"
+          },
+          {
+            "id": 14,
+            "subjectCode": "CS9999",
+            "subjectTitle": "Quantum Computing",
+            "faculty": "Dr. Strange",
             "department": "Information Technology"
           }
         ]
@@ -313,6 +346,28 @@
             "subjectCode": "Naan Mudhalvan",
             "subjectTitle": "Naan Mudhalvan EBPL",
             "faculty": "Mrs. S. Ponnarasi",
+            "department": "Information Technology"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "department": "Information Technology",
+    "semester": 7,
+    "sections": [
+      {
+        "section": "B",
+        "subjects": []
+      },
+      {
+        "section": "A",
+        "subjects": [
+          {
+            "id": 1,
+            "subjectCode": "CS9999",
+            "subjectTitle": "tragety Computing",
+            "faculty": "Dr. Strange",
             "department": "Information Technology"
           }
         ]
