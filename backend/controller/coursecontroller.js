@@ -3,7 +3,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import catchAsynError from "../middleware/catchAsynError.js";
 
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -60,7 +59,7 @@ export const staffDept = catchAsynError(async (req, res, next) => {
 
 export const admin = catchAsynError(async(req,res,next)=>{
 
-  const {dept,semester} = req.body;
+  const {dept,semester} = req.query
   
   const result =await data.filter(item => item.department == dept && item.semester == semester)
   

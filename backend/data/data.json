@@ -196,7 +196,7 @@
           {
             "id": 14,
             "subjectCode": "CS9999",
-            "subjectTitle": "Quantum Computing",
+            "subjectTitle": "Quantum Comm",
             "faculty": "Dr. Strange",
             "department": "Information Technology"
           }
@@ -357,20 +357,22 @@
     "semester": 7,
     "sections": [
       {
-        "section": "B",
+        "section": "A",
         "subjects": []
       },
       {
+        "section": "B",
+        "subjects": []
+      }
+    ]
+  },
+  {
+    "department": "Information Technology",
+    "semester": 8,
+    "sections": [
+      {
         "section": "A",
-        "subjects": [
-          {
-            "id": 1,
-            "subjectCode": "CS9999",
-            "subjectTitle": "trety Comp",
-            "faculty": "Dr. Strange",
-            "department": "Information Technology"
-          }
-        ]
+        "subjects": []
       }
     ]
   }

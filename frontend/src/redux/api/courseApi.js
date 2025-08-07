@@ -30,13 +30,12 @@ export const courseApi = createApi({
                 }
             }
         }),
-        admin: builder.mutation({
-            query: (body) => ({
-            url: '/admin',
-              method: 'POST',
-              body
+        admin: builder.query({
+            query: ({dept,semester}) => ({
+            url: `/admin?dept=${dept}&semester=${semester}`,
+              method: 'GET',
             }),
-            providesTags : ['admin']
+            providesTags : ['admin'],
         }),
 
         updataCourse : builder.mutation({
@@ -45,9 +44,27 @@ export const courseApi = createApi({
                 method : 'PUT',
                 body
             }),
-            invalidatesTags : ['admin']
+            invalidatesTags : ['admin'],
+        }),
+
+        addCourse : builder.mutation({
+            query : (body) => ({
+                url: "/admin/addCourse",
+                method: "POST",
+                body
+            }),
+            invalidatesTags : ['admin'],
+        }),
+
+        deleteCourse : builder.mutation ({
+            query : (body)=>({
+                url : "/admin/deleteCourse",
+                method : "DELETE",
+                body
+            }),
+            invalidatesTags : ['admin'],
         })
     })
 })
 
-export const {useGetSubjectsMutation,useGetFacultyDeptMutation,useAdminMutation,useUpdataCourseMutation} = courseApi
+export const {useGetSubjectsMutation,useGetFacultyDeptMutation,useAdminQuery,useUpdataCourseMutation, useAddCourseMutation ,useDeleteCourseMutation} = courseApi
