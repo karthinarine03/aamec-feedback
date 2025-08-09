@@ -7,18 +7,21 @@
     "antd": "^5.25.2",
     "bootstrap": "^5.3.6",
     "bootstrap-icons": "^1.13.1",
+    "child_process": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
+    "electron": "^37.2.6",
     "express": "^5.1.0",
     "mongoose": "^8.15.0",
     "nodemon": "^3.1.10",
+    "path": "^0.12.7",
     "react-export-table-to-excel": "^1.0.6",
     "react-hot-toast": "^2.5.2",
     "router": "^2.2.0"
   },
   "name": "aamecfeedback",
   "version": "1.0.0",
-  "description": "",
+  "description": "requirement in npm",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -26,5 +29,18 @@
     "dev": "nodemon backend/app.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthinarine03/aamec-feedback.git"
+  },
+  "bugs": {
+    "url": "https://github.com/karthinarine03/aamec-feedback/issues"
+  },
+  "homepage": "https://github.com/karthinarine03/aamec-feedback#readme"
 }

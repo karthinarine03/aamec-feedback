@@ -12,6 +12,7 @@ import Onestaffreview from './components/Onestaffreview'
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 import AdminSubjectEditor from "./components/AdminSubjectEditor"
+import AdminLogin from "./components/AdminLogin";
 function App() {
 
   return(
@@ -29,6 +30,8 @@ function App() {
               <Route path='/subjectList/:id'element={<SubjectsList/>}/>
         
               <Route path="/onestaff-reviews" element={<Onestaffreview />} />
+
+              <Route path="/adminLogin" element={<AdminLogin/>} />
               <Route path="/admin" element={<AdminSubjectEditor />} />
             </Routes>
           </div>

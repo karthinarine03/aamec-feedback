@@ -57,4 +57,9 @@ header {
   .card-header {
     font-size: 1.1rem;
   }
+
+  .adminError{
+    background-color: rgb(248, 202, 202);
+    border-radius: 12px;
+  }
   
