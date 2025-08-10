@@ -192,13 +192,6 @@
             "subjectTitle": "Speech Recognition Techniques",
             "faculty": "Mrs.N.Mohamed Haris",
             "department": "Information Technology"
-          },
-          {
-            "id": 14,
-            "subjectCode": "CS9999",
-            "subjectTitle": "Quantum Comm",
-            "faculty": "Dr. Strange",
-            "department": "Information Technology"
           }
         ]
       }

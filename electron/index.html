@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Electron Project Launcher</title>
+</head>
+<body>
+  <h1>Project Launcher</h1>
+  <button id="startBtn">Start Frontend & Backend</button>
+  <p id="output"></p>
+
+  <script>
+    document.getElementById('startBtn').addEventListener('click', async () => {
+      const url = await window.electronAPI.startProjects();
+      
+      if (url) {
+        document.getElementById('output').innerText = "Frontend running at: " + url;
+      } else {
+        document.getElementById('output').innerText = "Already running!";
+      }
+    });
+  </script>
+</body>
+</html>
