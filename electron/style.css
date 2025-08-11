@@ -1,8 +1,25 @@
-.center{
+body{
     display: flex;
+    height: 100vh;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    /* background : url(./assets/aamec_background.jpg) no-repeat center;
+    background-size:cover; */
+    
+}
+body div{
+    display: flex;
+    gap: 10px;
 }
 
-h1{
-    padding: 5%;
+button{
+    padding: 10px 15px;
+    font-weight: 700;
+    border-radius: 50px;
+}
+
+.header{
+    display: flex;
+    justify-self: start;
 }

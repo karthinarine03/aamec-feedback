@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, shell } = require('electron');
 const { spawn } = require('child_process');
 const os = require('os');
 const path = require('path');
@@ -6,11 +6,13 @@ const net = require('net');
 
 let frontendProcess, backendProcess;
 let mainWindow;
+let frontendURL
 
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    icon : path.join(__dirname,'icon.ico'),
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -74,11 +76,17 @@ ipcMain.handle('start-projects', async () => {
     frontendProcess.on('close', () => frontendProcess = null);
 
     // Wait for frontend to start
-    let frontendURL = await waitForPort(5173, localIP);
+     frontendURL = await waitForPort(5173, localIP);
     return frontendURL; // Send back to renderer
   }
 
   return null;
+});
+
+ipcMain.on("open-link", (event, route) => {
+  if (frontendURL) {
+    shell.openExternal(`${frontendURL}${route}`);
+  }
 });
 
 app.on('window-all-closed', () => {
@@ -89,3 +97,5 @@ app.on('quit', () => {
   if (frontendProcess) frontendProcess.kill();
   if (backendProcess) backendProcess.kill();
 });
+
+

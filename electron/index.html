@@ -1,22 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Electron Project Launcher</title>
+  <title>AAMEC Feedback Launcher</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./assets/aamec_logo.jpg">
 </head>
 <body>
-  <h1>Project Launcher</h1>
+  <div class="header">
+    <h1>AAMEC Feedback</h1>
+  </div>
   <button id="startBtn">Start Frontend & Backend</button>
-  <p id="output"></p>
+  <h2 id="output"></h2>
 
+  <div>
+    <button id="adminBtn">Admin</button>
+    <button id="staffBtn">Staff</button>
+  </div>
   <script>
     document.getElementById('startBtn').addEventListener('click', async () => {
       const url = await window.electronAPI.startProjects();
       
       if (url) {
+        document.getElementById('startBtn').disabled = true
         document.getElementById('output').innerText = "Frontend running at: " + url;
+        
       } else {
         document.getElementById('output').innerText = "Already running!";
       }
+    });
+
+
+    document.getElementById("adminBtn").addEventListener("click", () => {
+      window.electronAPI.openLink("/adminLogin");
+    });
+
+    document.getElementById("staffBtn").addEventListener("click", () => {
+      window.electronAPI.openLink("/onestaff-reviews");
     });
   </script>
 </body>

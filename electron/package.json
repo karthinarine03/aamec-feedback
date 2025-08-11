@@ -6,6 +6,13 @@
   "scripts": {
     "start": "electron ."
   },
+  "build": {
+    "appId": "com.AAMEC.FeedBackConnect",
+    "productName": "AAMEC FeedBack",
+    "win": {
+      "icon": "electron/icon.ico"
+    }
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -355,7 +355,15 @@
       },
       {
         "section": "B",
-        "subjects": []
+        "subjects": [
+          {
+            "id": 1,
+            "subjectTitle": "hindu mythodology",
+            "subjectCode": "CS9999",
+            "faculty": "Dr. Strange",
+            "department": "Information Technology"
+          }
+        ]
       }
     ]
   },

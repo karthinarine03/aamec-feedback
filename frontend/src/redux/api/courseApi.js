@@ -3,7 +3,7 @@ import { createApi,fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 export const courseApi = createApi({
     reducerPath : "courseApi",
     baseQuery : fetchBaseQuery({baseUrl:` http://${window.location.hostname}:3000/api/v1`}),
-    tagTypes : ['admin'],
+    tagTypes : ["Admin"],
     keepUnusedDataFor: 60,
     endpoints : (builder)=>({
         getSubjects : builder.mutation({
@@ -35,7 +35,7 @@ export const courseApi = createApi({
             url: `/admin?dept=${dept}&semester=${semester}`,
               method: 'GET',
             }),
-            providesTags : ['admin'],
+            providesTags : ["Admin"],
         }),
 
         updataCourse : builder.mutation({
@@ -44,7 +44,7 @@ export const courseApi = createApi({
                 method : 'PUT',
                 body
             }),
-            invalidatesTags : ['admin'],
+            invalidatesTags : ["Admin"],
         }),
 
         addCourse : builder.mutation({
@@ -53,7 +53,7 @@ export const courseApi = createApi({
                 method: "POST",
                 body
             }),
-            invalidatesTags : ['admin'],
+            invalidatesTags : ["Admin"],
         }),
 
         deleteCourse : builder.mutation ({
@@ -62,7 +62,7 @@ export const courseApi = createApi({
                 method : "DELETE",
                 body
             }),
-            invalidatesTags : ['admin'],
+            invalidatesTags : ["Admin"],
         })
     })
 })
